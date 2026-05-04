@@ -1,0 +1,148 @@
+# Hexo Configuration
+
+# Site
+title: Lamina
+subtitle: 高精度数学计算编程语言
+description: Lamina 一个数学用途的面向过程的解释性编程语言，拥有高精度的数字计算以及符号运算
+keywords: Lamina,Lamina语言,Lamina语言解释器,Lamina语言解释器源码,Lamina语言解释器Github
+author: Lamina-dev
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# URL
+url: https://lm-lang.org
+permalink: blog/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: blog
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+index_generator:
+  path: ''
+  per_page: 0
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# Pagination
+per_page: 0
+pagination_dir: page
+
+# Include / Exclude file(s)
+include:
+exclude:
+ignore:
+
+# Extensions
+theme: lamina
+
+# Markdown-it Configuration
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: ['"', '"', "'", "'"]
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSide: 'left'
+    permalinkSymbol: '#'
+    case: 0
+    separator: '-'
+
+# SEO Optimization
+# Sitemap Configuration
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+
+# RSS Feed Configuration
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true
+
+# Open Graph Configuration
+open_graph:
+  title: Lamina - 高精度数学计算编程语言
+  type: website
+  url: https://lm-lang.org
+  images:
+  twitter_card: summary_large_image
+  twitter_id: 
+  twitter_site: 
+  google_plus: 
+  fb_admins: 
+  fb_app_id: 
+
+# Additional SEO Settings
+seo:
+  canonical: true
+  robots: 'index, follow'
+  
+# Robots.txt Configuration
+robots:
+  allow: /
+  disallow: /admin/
+  sitemap: https://lm-lang.org/sitemap.xml
+
+# Deployment
+deploy:
+  type: ''

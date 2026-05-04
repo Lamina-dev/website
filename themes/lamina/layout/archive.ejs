@@ -1,0 +1,44 @@
+<div class="blog-archive">
+    <div class="archive-hero">
+        <h1>博客</h1>
+        <p>Lamina 语言的最新动态、技术文章和开发进展</p>
+    </div>
+    <div class="archive-container">
+        <% if (page.posts.length > 0) { %>
+            <% var last_year = 0; %>
+            <% page.posts.sort('-date').forEach(function(post) { %>
+                <% var year = post.date.year(); %>
+                <% if (last_year !== year) { %>
+                    <% if (last_year !== 0) { %>
+                        </div>
+                    <% } %>
+                    <div class="archive-year-group">
+                        <h2 class="archive-year"><%= year %></h2>
+                    <% last_year = year; %>
+                <% } %>
+                <article class="archive-post">
+                    <div class="archive-post-date"><%= date(post.date, 'MM-DD') %></div>
+                    <div class="archive-post-info">
+                        <a href="<%- url_for(post.path) %>" class="archive-post-title"><%= post.title %></a>
+                        <% if (post.excerpt) { %>
+                        <p class="archive-post-excerpt"><%- strip_html(post.excerpt).substring(0, 120) %>...</p>
+                        <% } %>
+                        <% if (post.categories && post.categories.length) { %>
+                        <div class="archive-post-categories">
+                            <% post.categories.forEach(function(cat) { %>
+                                <span class="category-tag"><%= cat.name %></span>
+                            <% }) %>
+                        </div>
+                        <% } %>
+                    </div>
+                </article>
+            <% }) %>
+            </div>
+        <% } else { %>
+            <div class="archive-empty">
+                <i class="fas fa-newspaper"></i>
+                <p>暂无博客文章，敬请期待！</p>
+            </div>
+        <% } %>
+    </div>
+</div>

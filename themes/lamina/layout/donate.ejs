@@ -1,0 +1,81 @@
+<div class="donate-hero">
+    <div class="content">
+        <h1>支持 Lamina</h1>
+        <p>您的支持帮助我们继续开发和维护Lamina这门高精度数学编程语言。每一份贡献，无论大小，都将产生重要影响。</p>
+    </div>
+</div>
+
+<div class="donate-section">
+    <div class="donate-content">
+        <h2 class="section-title">支持方式</h2>
+
+        <div class="donate-cards">
+            <div class="donate-card">
+                <h3>1. Open Collective</h3>
+                <p>通过我们的官方Open Collective页面支持Lamina，这将帮助我们承担开发与社区运营的费用。</p>
+                <a class="btn" href="https://opencollective.com/lamina-dev" target="_blank">前往 Open Collective →</a>
+            </div>
+
+            <div class="donate-card">
+                <h3>2. 直接捐赠</h3>
+                <p>您也可以使用以下方式直接捐赠。所有资金将直接用于Lamina的开发。</p>
+
+                <div class="qr-container" id="qrContainer" style="display:none;">
+                    <div class="qr-item">
+                        <div id="wechatQR"></div>
+                        <p>微信支付</p>
+                    </div>
+                    <div class="qr-item">
+                        <div id="alipayQR"></div>
+                        <p>支付宝</p>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" id="toggleDetails">显示捐赠方式</button>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" class="back-link">← 返回主页</a>
+        </div>
+    </div>
+</div>
+
+<script src="/js/qrcode.min.js"></script>
+<script>
+    async function generateQR(containerId, text, size) {
+        size = size || 180;
+        var container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = '';
+        try {
+            var canvas = document.createElement('canvas');
+            await QRCode.toCanvas(canvas, text, {
+                width: size,
+                margin: 2,
+                color: { dark: '#2c5381', light: '#ffffff' }
+            });
+            container.appendChild(canvas);
+        } catch (err) {
+            console.error('二维码生成失败:', err);
+            container.textContent = '二维码生成失败';
+        }
+    }
+    var toggleBtn = document.getElementById('toggleDetails');
+    var qrContainer = document.getElementById('qrContainer');
+    if (toggleBtn && qrContainer) {
+        toggleBtn.addEventListener('click', function() {
+            if (qrContainer.style.display === 'none') {
+                qrContainer.style.display = 'grid';
+                toggleBtn.textContent = '隐藏捐赠方式';
+            } else {
+                qrContainer.style.display = 'none';
+                toggleBtn.textContent = '显示捐赠方式';
+            }
+        });
+    }
+    document.addEventListener('DOMContentLoaded', async function() {
+        await generateQR('wechatQR', 'wxp://f2f08AVbcgyBXAydZj142nA3eAtAgExLVCUbAoy-LB4rt9NI8_foJGgrpkFxfcNB0K1d');
+        await generateQR('alipayQR', 'https://qr.alipay.com/fkx13856qgfxfx4lj2acfba');
+    });
+</script>

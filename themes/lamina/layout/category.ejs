@@ -1,0 +1,28 @@
+<div class="blog-archive">
+    <div class="archive-hero">
+        <h1>分类：<%= page.category %></h1>
+        <p>查看该分类下的所有文章</p>
+    </div>
+    <div class="archive-container">
+        <% if (page.posts.length > 0) { %>
+            <% page.posts.sort('-date').forEach(function(post) { %>
+                <article class="archive-post">
+                    <div class="archive-post-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
+                    <div class="archive-post-info">
+                        <a href="<%- url_for(post.path) %>" class="archive-post-title"><%= post.title %></a>
+                        <% if (post.excerpt) { %>
+                        <p class="archive-post-excerpt"><%- strip_html(post.excerpt).substring(0, 120) %>...</p>
+                        <% } %>
+                    </div>
+                </article>
+            <% }) %>
+        <% } else { %>
+            <div class="archive-empty">
+                <p>该分类下暂无文章</p>
+            </div>
+        <% } %>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> 返回博客</a>
+        </div>
+    </div>
+</div>
