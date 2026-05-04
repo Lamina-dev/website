@@ -4,8 +4,9 @@
         <p>查看该标签下的所有文章</p>
     </div>
     <div class="archive-container">
-        <% if (page.posts.length > 0) { %>
-            <% page.posts.sort('-date').forEach(function(post) { %>
+        <% var posts = page.posts || []; %>
+        <% if (posts.length > 0) { %>
+            <% posts.sort('-date').forEach(function(post) { %>
                 <article class="archive-post">
                     <div class="archive-post-date"><%= date(post.date, 'YYYY-MM-DD') %></div>
                     <div class="archive-post-info">
@@ -18,6 +19,7 @@
             <% }) %>
         <% } else { %>
             <div class="archive-empty">
+                <i class="fas fa-tags"></i>
                 <p>该标签下暂无文章</p>
             </div>
         <% } %>

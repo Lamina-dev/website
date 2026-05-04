@@ -4,9 +4,10 @@
         <p>Lamina 语言的最新动态、技术文章和开发进展</p>
     </div>
     <div class="archive-container">
-        <% if (page.posts.length > 0) { %>
+        <% var posts = page.posts || []; %>
+        <% if (posts.length > 0) { %>
             <% var last_year = 0; %>
-            <% page.posts.sort('-date').forEach(function(post) { %>
+            <% posts.sort('-date').forEach(function(post) { %>
                 <% var year = post.date.year(); %>
                 <% if (last_year !== year) { %>
                     <% if (last_year !== 0) { %>
