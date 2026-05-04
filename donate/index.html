@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支持Lamina - 捐赠</title>
+    <meta name="description" content="支持Lamina语言的发展，帮助推动高精度数学计算编程语言的开发">
+    <meta name="keywords" content="Lamina捐赠,支持Lamina,赞助Lamina,开源项目捐赠">
+    <script src="/assets/js/qrcode.min.js.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        :root,
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        header {
+            width: 100%;
+            height: 70px;
+            background-color: #2c5381;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header>div {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        header .left {
+            font-size: 30px;
+            padding: 0 20px;
+            user-select: none;
+            font-weight: 700;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            background-color: #2c5381;
+            width: 100%;
+            padding: 60px 20px;
+        }
+
+        .hero .content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 0.5rem + 2.5vw, 3.5rem);
+            margin: 0 0 20px 0;
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: #cbd5e0;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .donate-section {
+            background-color: #ffffff;
+            padding: 60px 20px;
+        }
+
+        .donate-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #1a202c;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #2c5381;
+        }
+
+        .donate-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .donate-card {
+            border-radius: 8px;
+            background-color: white;
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #2c5381;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .donate-card:nth-child(2) {
+            border-left-color: #ffc832;
+        }
+
+        .donate-card h3 {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .donate-card p {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            text-decoration: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: #2c5381;
+            color: #fff;
+            border: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #1e4063;
+        }
+
+        .btn-secondary {
+            background-color: #ffc832;
+            color: #000;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e6b42d;
+        }
+
+        .details-container {
+            margin-top: 20px;
+        }
+
+        details {
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #2c5381;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        details summary:hover {
+            color: #1e4063;
+        }
+
+        .qr-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .qr-item {
+            text-align: center;
+        }
+
+        .qr-item canvas {
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 8px;
+            background: #fff;
+            max-width: 100%;
+        }
+
+        .qr-item p {
+            margin-top: 10px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #2c5381;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            padding: 8px 0;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            header .left {
+                font-size: 24px;
+                padding: 0 15px;
+            }
+
+            header a {
+                font-size: 16px;
+                padding: 0 12px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .donate-card {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs//ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">Lamina</div>
+        <div class="right">
+            <a href="/">主页</a>
+            <a href="/download/index.html">下载</a>
+            <a href="/donate/">捐助</a>
+            <a href="https://wiki.lm-lang.org/" target="_blank">Wiki</a>
+            <a href="https://forum.lm-lang.org/" target="_blank">论坛</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="content">
+                <h1>支持 Lamina</h1>
+                <p>您的支持帮助我们继续开发和维护Lamina这门高精度数学编程语言。每一份贡献，无论大小，都将产生重要影响。</p>
+            </div>
+        </div>
+
+        <div class="donate-section">
+            <div class="donate-content">
+                <h2 class="section-title">支持方式</h2>
+
+                <div class="donate-cards">
+                    <div class="donate-card">
+                        <h3>1. Open Collective</h3>
+                        <p>通过我们的官方Open Collective页面支持Lamina，这将帮助我们承担开发与社区运营的费用。</p>
+                        <a class="btn" href="https://opencollective.com/lamina-dev" target="_blank">前往 Open Collective
+                            →</a>
+                    </div>
+
+                    <div class="donate-card">
+                        <h3>2. 直接捐赠</h3>
+                        <p>您也可以使用以下方式直接捐赠。所有资金将直接用于Lamina的开发。</p>
+
+                        <div class="details-container">
+                            <details id="donationDetails">
+                                <summary>显示付款二维码</summary>
+                                <div class="qr-container">
+                                    <div class="qr-item">
+                                        <div id="wechatQR"></div>
+                                        <p>微信支付</p>
+                                    </div>
+                                    <div class="qr-item">
+                                        <div id="alipayQR"></div>
+                                        <p>支付宝</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <button class="btn btn-secondary" id="toggleDetails">显示捐赠方式</button>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="./index.html" class="back-link">← 返回主页</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4><i class="fas fa-comments"></i> 社区交流</h4>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://qm.qq.com/cgi-bin/qm/qr?k=sSj7q14HP3UT2OlNqzmSVyp7EsPcthgZ&jump_from=webapi&authKey=uwVxTygvRRdev2UggBbMplJhWNWyebOw6SECSOGt4aldKqD9KMivdjqkOfT/L15I">
+                                    <i class="fab fa-qq"></i> QQ群: 917929893
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/YBBazvzC" target="_blank">
+                                    <i class="fab fa-discord"></i> Discord 群组
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/donate">
+                                    ❤️ 捐助
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4><i class="fab fa-github"></i> 代码仓库</h4>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/Lamina-dev/Lamina" target="_blank">
+                                    <i class="fas fa-code"></i> Lamina 语言源码
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/Lamina-dev/LamLab" target="_blank">
+                                    <i class="fas fa-laptop-code"></i> LamLab IDE
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4><i class="fas fa-book"></i> 学习资源</h4>
+                        <ul>
+                            <li>
+                                <a href="https://wiki.lm-lang.org/" target="_blank">
+                                    <i class="fas fa-book-open"></i> 官方文档
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://forum.lm-lang.org/" target="_blank">
+                                    <i class="fas fa-comment-dots"></i> 社区论坛
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-info">
+                    <h4>Lamina</h4>
+                    <p>高精度数学计算编程语言</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2025
+                <script>document.write((new Date()).getFullYear() != 2025 ? "-" + (new Date()).getFullYear() : "")</script>
+                Copyright 2025 Lamina-dev. All Rights Reserved.<br>
+                This domain is the official site for the Lamina language.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ------------------ 二维码生成 ------------------
+        async function generateQR(containerId, text, size = 180) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            container.innerHTML = '';
+            try {
+                const canvas = document.createElement('canvas');
+                await QRCode.toCanvas(canvas, text, {
+                    width: size,
+                    margin: 2,
+                    color: {
+                        dark: '#2c5381',
+                        light: '#ffffff'
+                    }
+                });
+                container.appendChild(canvas);
+            } catch (err) {
+                console.error('二维码生成失败:', err);
+                container.textContent = '二维码生成失败';
+            }
+        }
+
+        // ------------------ 详细信息切换 ------------------
+        const toggleDetailsBtn = document.getElementById('toggleDetails');
+        const detailsElement = document.getElementById('donationDetails');
+
+        if (toggleDetailsBtn && detailsElement) {
+            toggleDetailsBtn.addEventListener('click', () => {
+                if (detailsElement.hasAttribute('open')) {
+                    detailsElement.removeAttribute('open');
+                    toggleDetailsBtn.textContent = '显示捐赠方式';
+                } else {
+                    detailsElement.setAttribute('open', '');
+                    toggleDetailsBtn.textContent = '隐藏捐赠方式';
+                }
+            });
+
+            // 监听details元素的toggle事件
+            detailsElement.addEventListener('toggle', () => {
+                if (detailsElement.hasAttribute('open')) {
+                    toggleDetailsBtn.textContent = '隐藏捐赠方式';
+                } else {
+                    toggleDetailsBtn.textContent = '显示捐赠方式';
+                }
+            });
+        }
+
+        // ------------------ 页面加载完成后生成二维码 ------------------
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 微信支付二维码 - 使用真实的URL或支付码
+            await generateQR('wechatQR', 'wxp://f2f08AVbcgyBXAydZj142nA3eAtAgExLVCUbAoy-LB4rt9NI8_foJGgrpkFxfcNB0K1d');
+
+            // 支付宝二维码 - 使用真实的URL或支付码
+            await generateQR('alipayQR', 'https://qr.alipay.com/fkx13856qgfxfx4lj2acfba');
+        });
+    </script>
+</body>
+
+</html>

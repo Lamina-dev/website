@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lamina - Precise Math Programming Language</title>
+<style>
+  body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 20px; max-width: 900px; transition: all 0.3s; }
+  header { border-bottom: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+  h1 { color: #2c3e50; margin: 0; }
+  h2 { color: #34495e; }
+  pre { background: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+  code { font-family: Consolas, monospace; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  nav a { margin-right: 15px; }
+  footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #ccc; padding-top: 10px; }
+  button.lang-switch { padding: 5px 10px; font-size: 0.9em; cursor: pointer; margin-left: 10px; }
+
+
+  a.download-btn {
+    background-color: #27ae60;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  a.download-btn:hover {
+    background-color: #2ecc71;
+  }
+
+
+  a.donate-btn {
+    background-color: #e91e63;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-left: 10px;
+  }
+  a.donate-btn:hover {
+    background-color: #ff4081;
+  }
+
+  /* 响应式调整 */
+  @media (max-width: 600px) {
+    nav a, button.lang-switch { display: block; margin: 5px 0; }
+    header { flex-direction: column; align-items: flex-start; }
+  }
+  a.wiki-btn {
+  background-color: #3f51b5;
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+  margin-left: 10px;
+}
+a.wiki-btn:hover {
+  background-color: #5c6bc0;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1 data-en="Lamina" data-zh="Lamina">Lamina</h1>
+    <p data-en="A precise math programming language" data-zh="精确数学计算编程语言">A precise math programming language</p>
+  </div>
+  <div>
+    <button class="lang-switch" id="langBtn">中文</button>
+  </div>
+  <nav>
+    <a href="#overview" data-en="Overview" data-zh="概述">Overview</a>
+    <a href="#features" data-en="Features" data-zh="主要特性">Features</a>
+    <a href="#nav" data-en="Navigation" data-zh="导航">Navigation</a>
+    <a href="#star" data-en="Star" data-zh="Star">Star</a>
+    <a href="https://wiki.lm-lang.org/" class="wiki-btn" target="_blank" data-en="Wiki" data-zh="Wiki">Wiki</a>
+    <a href="/download.html" class="download-btn" data-en="Download" data-zh="下载">Download</a>
+    <a href="https://github.com/Lamina-dev/Lamina" target="_blank">GitHub</a>
+    <a href="/donate.html" class="donate-btn" target="_blank" data-en="Donate" data-zh="捐赠">Donate</a>
+  </nav>
+</header>
+
+<section id="overview">
+  <h2 data-en="Overview" data-zh="概述">Overview</h2>
+  <p data-en="Lamina is a procedural math language, focused on solving mathematical problems efficiently. It is Turing-complete with concise syntax and support for complex math operations."
+     data-zh="Lamina 是一种面向过程的数学计算语言，专注于数学问题的高效解决，支持图灵完备性。设计目标是提供简洁、直观的语法，同时支持复杂数学运算。">
+    Lamina is a procedural math language, focused on solving mathematical problems efficiently. It is Turing-complete with concise syntax and support for complex math operations.
+  </p>
+</section>
+
+<section id="features">
+  <h2 data-en="Features" data-zh="主要特性">Features</h2>
+  <ul>
+    <li data-en="Exact math: rational and irrational numbers (√, π, e) support" data-zh="精确数学：支持有理数（分数）和无理数（√、π、e）的精确表示和运算">
+      Exact math: rational and irrational numbers (√, π, e) support
+    </li>
+    <li data-en="Precision-safe: avoid floating-point errors" data-zh="精度保护：避免浮点数精度丢失，多次循环运算保持精确">
+      Precision-safe: avoid floating-point errors
+    </li>
+    <li data-en="Math-friendly: vectors, matrices, and functions supported" data-zh="数学友好：原生支持向量、矩阵运算和数学函数">
+      Math-friendly: vectors, matrices, and functions supported
+    </li>
+    <li data-en="Recursive support with configurable depth" data-zh="递归支持：可配置递归深度限制">
+      Recursive support with configurable depth
+    </li>
+    <li data-en="Big integers: arbitrary precision" data-zh="大整数：支持任意精度大整数运算">
+      Big integers: arbitrary precision
+    </li>
+    <li data-en="Interactive REPL and script execution" data-zh="交互式 REPL 和脚本执行">
+      Interactive REPL and script execution
+    </li>
+    <li data-en="Smart terminal and stack tracing for debugging" data-zh="智能终端支持，栈追踪便于调试">
+      Smart terminal and stack tracing for debugging
+    </li>
+  </ul>
+</section>
+
+<section id="nav">
+  <h2 data-en="Navigation" data-zh="导航">Navigation</h2>
+  <ul>
+    <li><a href="https://discord.gg/YBBazvzC" target="_blank">Discord</a></li>
+    <li><a href="https://forum.lm-lang.org/" target="_blank">Forum</a></li>
+    <li><a href="https://github.com/Lamina-dev/Lamina" target="_blank">Lamina</a></li>
+    <li><a href="https://github.com/Lamina-dev/LamLab" target="_blank">Lamina IDE</a></li>
+    <li><a href="https://github.com/Lamina-dev/LSR" target="_blank">LSR</a> (Lamina Standard Recommendation)</li>
+    <li><a href="https://wiki.lm-lang.org/" target="_blank">Wiki</a></li>
+    <li><a href="./qq.html" target="_blank">QQ Group</a></li>
+  </ul>
+</section>
+
+<section id="star">
+  <h2 data-en="Star History" data-zh="Star 历史">Star History</h2>
+  <p>
+    <a href="https://www.star-history.com/#lamina-dev/lamina&Date" target="_blank">
+      <img src="https://api.star-history.com/svg?repos=lamina-dev/lamina&type=Date" alt="Star History Chart" style="max-width:100%;height:auto;" loading="lazy">
+    </a>
+  </p>
+</section>
+
+<footer>
+  <p data-en="2025 Lamina-dev &mdash; GitHub Repository" data-zh="2025 Lamina-dev &mdash; GitHub 仓库">
+    2025 Lamina-dev &mdash; <a href="https://github.com/Lamina-dev/Lamina" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+<script>
+const langBtn = document.getElementById('langBtn');
+let currentLang = 'en'; // 默认英语
+
+langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  langBtn.textContent = currentLang === 'en' ? '中文' : 'English';
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lamina Prepacked Version</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #2c3e50;
+  }
+  h1 { font-size: 3em; margin-bottom: 20px; }
+  p { font-size: 1.2em; margin-bottom: 20px; max-width: 600px; }
+  button.lang-switch {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  a.home-btn {
+    display: inline-block;
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  a.home-btn:hover { background-color: #2ecc71; }
+</style>
+</head>
+<body>
+
+<h1 data-en="Prepacked Version Temporarily Unavailable" data-zh="预包装版本暂时不可用">
+  Prepacked Version Temporarily Unavailable
+</h1>
+<p data-en="Due to lack of code signing and user feedback, this feature is temporarily suspended. Thank you for your understanding."
+   data-zh="由于缺少代码签名，并根据用户反馈，此功能将暂时暂停。感谢您的理解。">
+  Due to lack of code signing and user feedback, this feature is temporarily suspended. Thank you for your understanding.
+</p>
+
+<a href="download.html" class="home-btn" data-en="Return to Download Page" data-zh="返回下载页面">
+  Return to Download Page
+</a>
+<br><br>
+<button class="lang-switch" id="langBtn">中文</button>
+
+<script>
+const langBtn = document.getElementById('langBtn');
+let currentLang = 'en';
+
+langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  langBtn.textContent = currentLang === 'en' ? '中文' : 'English';
+});
+</script>
+
+</body>
+</html>
+
