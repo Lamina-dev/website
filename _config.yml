@@ -139,8 +139,10 @@ seo:
   
 # Robots.txt Configuration
 robots:
-  allow: /
-  disallow: /admin/
+  allow:
+    - /
+  disallow:
+    - /admin/
   sitemap: https://lm-lang.org/sitemap.xml
 
 # Deployment
