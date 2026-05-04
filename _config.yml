@@ -2,9 +2,9 @@
 
 # Site
 title: Lamina
-subtitle: 高精度数学计算编程语言
-description: Lamina 一个数学用途的面向过程的解释性编程语言，拥有高精度的数字计算以及符号运算
-keywords: Lamina,Lamina语言,Lamina语言解释器,Lamina语言解释器源码,Lamina语言解释器Github
+subtitle: 可编程的数学环境
+description: Lamina 一个可编程的数学环境
+keywords: Lamina,Lamina项目,Lamina项目解释器,Lamina项目解释器源码,Lamina项目解释器Github
 author: Lamina-dev
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -121,7 +121,7 @@ feed:
 
 # Open Graph Configuration
 open_graph:
-  title: Lamina - 高精度数学计算编程语言
+  title: Lamina - 可编程的数学环境
   type: website
   url: https://lm-lang.org
   images:

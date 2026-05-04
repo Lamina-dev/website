@@ -14,20 +14,19 @@
                 </a>
             </div>
         </div>
-        <pre class="right"><code><span>script.lm</span><pre>// 精确数学计算
-print("Hello, Lamina!");
-var fraction = 16 / 9; // 精确分数，不是浮点数
-print("16/9 =", fraction); // 输出: 16/9
+        <pre class="right"><code><span>script.lm</span><pre>
+let c = 5
+sym x
+let res = c * x
+sym x, y
+let equation = x^2 + 1 + y*2
+let val1 = equation => (x => 3, y => 4)
 
-var root = sqrt(2); // 精确无理数
-print("√2 =", root); // 输出: √2
-print("√2 × √2 =", root * root);// 输出: 2（精确结果）
-
-// 向量运算
-var v1 = [1, 2, 3];
-var v2 = [4, 5, 6];
-print("v1 + v2 =", v1 + v2);
-print("v1 · v2 =", dot(v1, v2));</pre></code>
+let squares = vec[x^2 for x in range(1, 10) if x % 2 == 0]
+let abs_set = {abs(x) for x in vec[-1, 1, 2, -2]}
+let M = mat[i * j for i in range(1,3); for j in range(1,3)]
+let A = mat[1,2,3;4,5,6;7,8,9]
+let v = vec[1,2,3]</pre></code>
     </div>
 </div>
 </div>
@@ -35,21 +34,21 @@ print("v1 · v2 =", dot(v1, v2));</pre></code>
     <div class="content">
         <div class="card">
             <div class="header">
-                <h3>数学友好</h3>
+                <h3>简单映射</h3>
             </div>
-            <span class="content">支持任意精度有理数(分数)和无理数(√、π、e)的精确表示和运算</span>
+            <span class="content">表达式导向设计，实现复杂模型时无需繁琐转换。</span>
         </div>
         <div class="card">
             <div class="header">
-                <h3>性能友好</h3>
+                <h3>高效运行</h3>
             </div>
-            <span class="content">使用LMVM实现高效运行</span>
+            <span class="content">由 LAMMP、LMMC、LMCAS、LMVM 强劲驱动</span>
         </div>
         <div class="card">
             <div class="header">
-                <h3>扩展友好</h3>
+                <h3>轻量驱动</h3>
             </div>
-            <span class="content">无缝与C/C++衔接</span>
+            <span class="content">无重型运行时负担，快速嵌入各类系统</span>
         </div>
     </div>
 </div>
