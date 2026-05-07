@@ -1,5 +1,5 @@
 ---
-title: Hello Lamina!
+title: Hello, Lamina!
 date: 2026/5/4 23:23
 ---
 ## 为什么会有 Lamina?
