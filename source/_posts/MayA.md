@@ -1,0 +1,46 @@
+---
+title: 五月-A
+date: 2026-05-16 23:23:00
+categories:
+  - 半月报
+tags:
+  - 半月报
+---
+## 完成事项
+* LMCAS
+  * 矩阵化的多项式处理的探索（排除这个方向）
+* LMMC 
+  * 类型系统抽象
+  * 移除高级求解器迭代过程中的动态内存分配
+  * 完成通用矩阵乘法分块和展开优化
+  * 稀疏矩阵支持
+  * COO 格式动态构建器
+  * 日志
+  * 修正近似相等的错误
+* LAMMP
+  * 弃置MASM，改用NASM
+  * 重写核心算子
+  * 汇编采用BMI2 指令集
+  * 高效的二进制求逆
+    * 不平衡与分治情况下的高精度平衡二进制逆元计算（`lmmp_binvert_n_dc_`）
+    * 引入梅森数模乘法
+  * 高效的取模
+    * `lmmp_mod_1_` / `lmmp_mod_2_`算子
+    * 更小的质因数分解缓冲区估算上界
+  * 高效的素性检验
+    * `next_prime_ulong` / `prev_prime_ulong`快速上、下素数查找例程
+    * Miller-Rabin 素性检验的3,5,7,11余数掩码表`trial_div35711`
+## 计划事项
+* LMCAS
+    * 继续探索矩阵化的多项式处理方法
+* LMMC
+    * 待定
+* LAMMP
+    * 略
+* LMVM
+    * 略
+* Lamina
+    * 略
+## 订阅
+[RSS](https://lm-lang.org/atom.xml)
+ | [Discord](https://discord.gg/AzSFWuMFsY)
