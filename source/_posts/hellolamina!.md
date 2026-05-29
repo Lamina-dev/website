@@ -3,6 +3,7 @@ title: Hello, Lamina!
 date: 2026-05-04 23:23:00
 categories:
   - 介绍
+  - 2026
 tags:
   - Lamina
   - 介绍
