@@ -35,4 +35,4 @@ Lamina 最早所宣传的是“精确数学计算编程语言”，随着开发�
 - 设计的改变
 - 下一阶段的目标
 这既是对外的说明，也算作对开发节奏的一个约束。因为都是学生，业余时间不会太多，每一篇的长度不会太多，我相信对于一个仍在构建基础的项目而言，公开过程让人总是能看到进展是令人振奋的。
-如果你对Lamina感兴趣，订阅RSS(https://lm-lang.org/atom.xml)或者加入我们的[Discord服务器](https://discord.gg/AzSFWuMFsY)，让你能持续收到开发进度！
+如果你对Lamina感兴趣，订阅RSS(https://laminasys.org/atom.xml)或者加入我们的[Discord服务器](https://discord.gg/AzSFWuMFsY)，让你能持续收到开发进度！
