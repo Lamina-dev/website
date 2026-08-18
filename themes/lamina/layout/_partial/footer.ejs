@@ -1,71 +1,30 @@
-<footer>
-    <div class="footer-content">
-        <div class="footer-main">
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4><i class="fas fa-comments"></i> 社区交流</h4>
-                    <ul>
-                        <li>
-                            <a href="https://qm.qq.com/cgi-bin/qm/qr?k=sSj7q14HP3UT2OlNqzmSVyp7EsPcthgZ&jump_from=webapi&authKey=uwVxTygvRRdev2UggBbMplJhWNWyebOw6SECSOGt4aldKqD9KMivdjqkOfT/L15I"
-                                title="点击复制QQ群号">
-                                <i class="fab fa-qq"></i> QQ群: 917929893
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://discord.gg/AzSFWuMFsY" target="_blank">
-                                <i class="fab fa-discord"></i> Discord 群组
-                            </a>
-                        </li>
-                        <!--<li>
-                            <a href="<%= url_for('/donate/') %>">
-                                ❤️ 捐助
-                            </a>
-                        </li>-->
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4><i class="fab fa-github"></i> 代码仓库</h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/Lamina-dev/Lamina" target="_blank">
-                                <i class="fas fa-code"></i> Lamina 项目源码
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Lamina-dev/LamLab" target="_blank">
-                                <i class="fas fa-laptop-code"></i> LamLab IDE
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4><i class="fas fa-book"></i> 学习资源</h4>
-                    <ul>
-                        <li>
-                            <a href="https://wiki.laminasys.org/" target="_blank">
-                                <i class="fas fa-book-open"></i> 官方文档
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://forum.laminasys.org/" target="_blank">
-                                <i class="fas fa-comment-dots"></i> 社区论坛
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-info">
-                <h4>Lamina</h4>
-                <p>可编程的数学环境</p>
-            </div>
+<footer class="site-footer">
+    <div class="portal-shell site-footer-grid">
+        <div class="site-footer-column">
+            <h4>主要站点</h4>
+            <a href="<%= url_for('/') %>">Lamina</a>
+            <a href="<%= url_for('/download/') %>">下载</a>
+            <a href="<%= url_for('/blog/') %>">博客</a>
         </div>
-
-        <div class="copyright">
-            Copyright © 2025-2026 Lamina-dev. All Rights Reserved.<br>
-            This domain is the official site for the Lamina System.
+        <div class="site-footer-column">
+            <h4>社区</h4>
+            <a href="https://forum.laminasys.org/" target="_blank" rel="noopener">论坛</a>
+            <a href="https://discord.gg/AzSFWuMFsY" target="_blank" rel="noopener">Discord</a>
+            <a href="https://qm.qq.com/cgi-bin/qm/qr?k=sSj7q14HP3UT2OlNqzmSVyp7EsPcthgZ&jump_from=webapi&authKey=uwVxTygvRRdev2UggBbMplJhWNWyebOw6SECSOGt4aldKqD9KMivdjqkOfT/L15I" target="_blank" rel="noopener">QQ群 917929893</a>
         </div>
+        <div class="site-footer-column">
+            <h4>开发</h4>
+            <a href="https://github.com/Lamina-dev/Lamina" target="_blank" rel="noopener">Lamina 源码</a>
+            <a href="https://github.com/Lamina-dev/LamLab" target="_blank" rel="noopener">LamLab</a>
+            <a href="https://wiki.laminasys.org/" target="_blank" rel="noopener">Wiki</a>
+        </div>
+        <div class="site-footer-about">
+            <strong>Lamina</strong>
+            <p>可编程的数学环境</p>
+        </div>
+    </div>
+    <div class="portal-shell site-footer-bottom">
+        <span>Copyright © 2025–2026 Lamina-dev.</span>
+        <span>This domain is the official site for the Lamina System.</span>
     </div>
 </footer>
