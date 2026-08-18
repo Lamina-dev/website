@@ -6,8 +6,8 @@
                 <h1>欢迎！</h1>
                 <p class="portal-lead">Lamina 是一个面向数学、科学计算与系统编程的可编程数学环境。</p>
                 <div class="portal-actions">
-                    <a class="portal-button portal-button-primary" href="<%= url_for('/download/') %>">下载 Lamina</a>
-                    <a class="portal-button portal-button-quiet" href="https://wiki.laminasys.org/" target="_blank" rel="noopener">阅读文档</a>
+                    <a class="portal-button portal-button-primary" href="<%= url_for('/download/') %>"><i class="fa-solid fa-download" aria-hidden="true"></i> 下载 Lamina</a>
+                    <a class="portal-button portal-button-quiet" href="https://wiki.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 阅读文档</a>
                 </div>
             </div>
             <div class="portal-mark" aria-hidden="true">
@@ -19,14 +19,14 @@
     <section class="portal-section portal-intro">
         <div class="portal-shell portal-two-col">
             <article class="portal-intro-block">
-                <div class="portal-intro-symbol">?</div>
+                <div class="portal-intro-symbol"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></div>
                 <div>
                     <h2>Lamina 是什么？</h2>
                     <p>Lamina 把符号数学、数值计算与通用编程放进同一套语言与工具链中，让表达式、矩阵、容器和程序逻辑能够自然地一起工作。</p>
                 </div>
             </article>
             <article class="portal-intro-block">
-                <div class="portal-intro-symbol">!</div>
+                <div class="portal-intro-symbol"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
                 <div>
                     <h2>马上行动！</h2>
                     <p>下载 Lamina，阅读 Wiki，尝试语言特性，或者直接加入社区、报告问题并参与项目开发。</p>
@@ -38,7 +38,7 @@
     <section class="portal-section portal-demo">
         <div class="portal-shell">
             <div class="portal-section-heading">
-                <h2>快速体验</h2>
+                <h2><i class="fa-solid fa-terminal" aria-hidden="true"></i> 快速体验</h2>
                 <p>从表达式到矩阵推导，保持数学形式与程序结构的一致。</p>
             </div>
             <div class="portal-code-window">
@@ -62,24 +62,33 @@ let v = vec[1,2,3]</code></pre>
     <section class="portal-section portal-projects">
         <div class="portal-shell">
             <div class="portal-section-heading">
-                <h2>项目</h2>
-                <p>Lamina 不只是一个解释器，而是一组围绕语言、数学计算与开发体验构成的工具。</p>
+                <h2><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> 项目</h2>
+                <p>Lamina 由语言核心、数值计算、计算机代数和高精度算术等多个组件共同构成。</p>
             </div>
-            <div class="portal-three-col portal-project-grid">
+            <div class="portal-project-grid">
                 <article class="portal-project-card">
+                    <div class="portal-project-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
                     <h3>Lamina</h3>
                     <p>语言与核心运行环境，提供统一的语法、类型和执行模型。</p>
-                    <a href="https://github.com/Lamina-dev/Lamina" target="_blank" rel="noopener">查看源码 →</a>
+                    <a href="https://github.com/Lamina-dev/Lamina" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> 查看源码</a>
                 </article>
                 <article class="portal-project-card">
+                    <div class="portal-project-icon" aria-hidden="true"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>LMMC</h3>
+                    <p>Lamina 数值计算库，提供矩阵、稀疏线性代数、迭代求解、ODE、统计与 FFT 等能力。</p>
+                    <a href="https://github.com/Lamina-dev/LMMC" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> 查看源码</a>
+                </article>
+                <article class="portal-project-card">
+                    <div class="portal-project-icon" aria-hidden="true"><i class="fa-solid fa-superscript"></i></div>
                     <h3>LMCAS</h3>
-                    <p>计算机代数系统，为符号表达式、方程与代数运算提供核心能力。</p>
-                    <a href="https://wiki.laminasys.org/" target="_blank" rel="noopener">了解更多 →</a>
+                    <p>Lamina 计算机代数系统，负责符号表达式、化简、求导、积分、方程与符号矩阵计算。</p>
+                    <a href="https://github.com/Lamina-dev/LMCAS" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> 查看源码</a>
                 </article>
                 <article class="portal-project-card">
-                    <h3>LamLab</h3>
-                    <p>面向 Lamina 的开发与实验环境，让语言、计算和交互式工作流更紧密地结合。</p>
-                    <a href="https://github.com/Lamina-dev/LamLab" target="_blank" rel="noopener">查看源码 →</a>
+                    <div class="portal-project-icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>LAMMP</h3>
+                    <p>Lamina 高精度计算库，为任意精度整数、数论运算与底层高性能算子提供基础能力。</p>
+                    <a href="https://github.com/Lamina-dev/LAMMP" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> 查看源码</a>
                 </article>
             </div>
         </div>
@@ -89,7 +98,7 @@ let v = vec[1,2,3]</code></pre>
         <div class="portal-shell">
             <div class="portal-section-heading portal-heading-row">
                 <div>
-                    <h2>最新动态</h2>
+                    <h2><i class="fa-solid fa-newspaper" aria-hidden="true"></i> 最新动态</h2>
                     <p>来自 Lamina 开发与社区的最新文章。</p>
                 </div>
                 <a class="portal-text-link" href="<%= url_for('/blog/') %>">全部文章 →</a>
@@ -115,7 +124,7 @@ let v = vec[1,2,3]</code></pre>
     <section class="portal-section portal-supporters">
         <div class="portal-shell">
             <div class="portal-section-heading">
-                <h2>合作伙伴</h2>
+                <h2><i class="fa-solid fa-handshake" aria-hidden="true"></i> 合作伙伴</h2>
             </div>
             <div class="portal-supporter-row">
                 <a href="https://chuqiyun.com/aff/HNHKAJUX" target="_blank" rel="noopener">初七云</a>
