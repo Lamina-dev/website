@@ -4,6 +4,8 @@
             <h4>主要站点</h4>
             <a href="<%= url_for('/') %>"><i class="fa-solid fa-house" aria-hidden="true"></i> Lamina</a>
             <a href="<%= url_for('/download/') %>"><i class="fa-solid fa-download" aria-hidden="true"></i> 下载</a>
+            <a href="https://docs.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 文档</a>
+            <a href="https://git.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Git 加速</a>
             <a href="<%= url_for('/blog/') %>"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> 博客</a>
         </div>
         <div class="site-footer-column">
@@ -20,11 +22,16 @@
             <a href="https://github.com/Lamina-dev/LMMC" target="_blank" rel="noopener"><i class="fa-solid fa-calculator" aria-hidden="true"></i> LMMC</a>
             <a href="https://github.com/Lamina-dev/LMCAS" target="_blank" rel="noopener"><i class="fa-solid fa-superscript" aria-hidden="true"></i> LMCAS</a>
             <a href="https://github.com/Lamina-dev/LAMMP" target="_blank" rel="noopener"><i class="fa-solid fa-microchip" aria-hidden="true"></i> LAMMP</a>
-            <a href="https://wiki.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book" aria-hidden="true"></i> Wiki</a>
+            <a href="mailto:administrators@laminasys.org"><i class="fa-solid fa-envelope" aria-hidden="true"></i> administrators@laminasys.org</a>
         </div>
         <div class="site-footer-about">
-            <strong>Lamina</strong>
-            <p>可编程的数学环境</p>
+            <div class="site-footer-brand">
+                <img src="<%= url_for('/img/logo-icon.svg') %>" alt="Lamina Logo">
+                <div>
+                    <strong>Lamina</strong>
+                    <p>可编程的数学环境</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="portal-shell site-footer-bottom">

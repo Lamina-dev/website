@@ -50,6 +50,13 @@ body {
     font-size: 1.55rem;
     font-weight: 700;
     letter-spacing: .01em;
+    gap: 8px;
+}
+
+.site-brand img {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
 }
 
 .site-nav {
@@ -143,21 +150,18 @@ body {
 }
 
 .portal-mark {
-    width: 170px;
-    height: 170px;
+    width: 180px;
+    height: 180px;
     justify-self: end;
-    border: 7px solid var(--portal-blue);
     display: grid;
     place-items: center;
-    color: var(--portal-blue);
-    transform: rotate(45deg);
 }
 
-.portal-mark span {
-    transform: rotate(-45deg);
-    font-size: 5rem;
-    line-height: 1;
-    font-weight: 700;
+.portal-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .portal-section {
@@ -368,18 +372,33 @@ body {
     background: var(--portal-soft);
 }
 
-.portal-supporter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    color: #65717c;
+.portal-supporter-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--portal-line);
+    border-bottom: 1px solid var(--portal-line);
 }
 
-.portal-supporter-row a {
-    color: var(--portal-blue);
-    font-weight: 600;
+.portal-supporter-card {
+    min-height: 82px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #65717c;
     text-decoration: none;
+}
+
+.portal-supporter-card:first-child { border-right: 1px solid var(--portal-line); }
+.portal-supporter-card > i { color: var(--portal-blue); font-size: 1.8rem; width: 48px; text-align: center; }
+.portal-supporter-brand { color: #65717c; }
+.portal-supporter-brand:hover { background: #fff; text-decoration: none; }
+.portal-supporter-brand img {
+    width: 118px;
+    max-height: 46px;
+    object-fit: contain;
+    object-position: left center;
+    flex: 0 0 auto;
 }
 
 .site-footer {
@@ -419,8 +438,14 @@ body {
     padding-left: 30px;
 }
 
+.site-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.site-footer-brand img { width: 54px; height: 54px; flex: 0 0 54px; }
 .site-footer-about strong { font-size: 1.55rem; }
-.site-footer-about p { margin: 7px 0 0; color: #dbe6f0; }
+.site-footer-about p { margin: 4px 0 0; color: #dbe6f0; }
 
 .site-footer-bottom {
     display: flex;
@@ -446,8 +471,7 @@ body {
     .site-nav { overflow-x: auto; border-top: 1px solid rgba(255,255,255,.15); }
     .site-nav a { min-height: 44px; padding: 0 12px; white-space: nowrap; }
     .portal-hero-grid { grid-template-columns: 1fr; min-height: 0; gap: 30px; }
-    .portal-mark { justify-self: start; width: 110px; height: 110px; }
-    .portal-mark span { font-size: 3.2rem; }
+    .portal-mark { justify-self: start; width: 120px; height: 120px; }
     .portal-two-col,
     .portal-three-col,
     .portal-project-grid,
@@ -469,6 +493,8 @@ body {
     .portal-news-item:last-child { padding-bottom: 0; border-bottom: 0; }
     .site-footer-about { border-left: 0; border-top: 1px solid rgba(255,255,255,.2); padding: 22px 0 0; }
     .site-footer-bottom { flex-direction: column; gap: 5px; }
+    .portal-supporter-list { grid-template-columns: 1fr; }
+    .portal-supporter-card:first-child { border-right: 0; border-bottom: 1px solid var(--portal-line); }
 }
 
 @media (max-width: 520px) {

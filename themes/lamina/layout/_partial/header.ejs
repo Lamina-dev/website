@@ -1,11 +1,15 @@
 <header class="site-header">
     <div class="site-header-inner">
-        <a class="site-brand" href="<%= url_for('/') %>">Lamina</a>
+        <a class="site-brand" href="<%= url_for('/') %>">
+            <img src="<%= url_for('/img/logo-icon.svg') %>" alt="" aria-hidden="true">
+            <span>Lamina</span>
+        </a>
         <nav class="site-nav" aria-label="主导航">
             <a href="<%= url_for('/') %>">主页</a>
             <a href="https://github.com/Lamina-dev" target="_blank" rel="noopener">项目</a>
             <a href="<%= url_for('/download/') %>">下载</a>
-            <a href="https://wiki.laminasys.org/" target="_blank" rel="noopener">文档</a>
+            <a href="https://docs.laminasys.org/" target="_blank" rel="noopener">文档</a>
+            <a href="https://git.laminasys.org/" target="_blank" rel="noopener">Git 加速</a>
             <a href="<%= url_for('/blog/') %>">博客</a>
             <a href="https://forum.laminasys.org/" target="_blank" rel="noopener">社区</a>
         </nav>

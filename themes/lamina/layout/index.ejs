@@ -7,11 +7,11 @@
                 <p class="portal-lead">Lamina 是一个面向数学、科学计算与系统编程的可编程数学环境。</p>
                 <div class="portal-actions">
                     <a class="portal-button portal-button-primary" href="<%= url_for('/download/') %>"><i class="fa-solid fa-download" aria-hidden="true"></i> 下载 Lamina</a>
-                    <a class="portal-button portal-button-quiet" href="https://wiki.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 阅读文档</a>
+                    <a class="portal-button portal-button-quiet" href="https://docs.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 阅读文档</a>
                 </div>
             </div>
-            <div class="portal-mark" aria-hidden="true">
-                <span>L</span>
+            <div class="portal-mark">
+                <img src="<%= url_for('/img/logo-icon.svg') %>" alt="Lamina Logo">
             </div>
         </div>
     </section>
@@ -29,7 +29,7 @@
                 <div class="portal-intro-symbol"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
                 <div>
                     <h2>马上行动！</h2>
-                    <p>下载 Lamina，阅读 Wiki，尝试语言特性，或者直接加入社区、报告问题并参与项目开发。</p>
+                    <p>下载 Lamina，阅读文档，尝试语言特性，或者直接加入社区、报告问题并参与项目开发。</p>
                 </div>
             </article>
         </div>
@@ -126,10 +126,15 @@ let v = vec[1,2,3]</code></pre>
             <div class="portal-section-heading">
                 <h2><i class="fa-solid fa-handshake" aria-hidden="true"></i> 合作伙伴</h2>
             </div>
-            <div class="portal-supporter-row">
-                <a href="https://chuqiyun.com/aff/HNHKAJUX" target="_blank" rel="noopener">初七云</a>
-                <span>·</span>
-                <span>SignPath 为 Lamina 项目提供免费代码签名服务。</span>
+            <div class="portal-supporter-list">
+                <a class="portal-supporter-card portal-supporter-brand" href="https://chuqiyun.com/aff/HNHKAJUX" target="_blank" rel="noopener">
+                    <img src="https://chuqiyun.com/static/images/logo2.png" alt="初七云">
+                    <span>为 Lamina 网络服务提供云服务支持。</span>
+                </a>
+                <div class="portal-supporter-card">
+                    <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                    <span>SignPath 为 Lamina 项目提供免费代码签名服务。</span>
+                </div>
             </div>
         </div>
     </section>
