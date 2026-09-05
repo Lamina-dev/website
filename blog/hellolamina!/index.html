@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, Lamina! - Lamina</title>
+    <meta name="description" content="Lamina 一个可编程的数学环境">
+    <meta name="keywords" content="Lamina,Lamina项目,Lamina项目解释器,Lamina项目解释器源码,Lamina项目解释器Github">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/portal.css?v=9">
+    <link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs//ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Lamina" type="application/atom+xml">
+</head>
+<body>
+    <header class="site-header">
+    <div class="site-header-inner">
+        <a class="site-brand" href="/">Lamina</a>
+        <nav class="site-nav" aria-label="主导航">
+            <a href="/">主页</a>
+            <a href="https://github.com/Lamina-dev" target="_blank" rel="noopener">项目</a>
+            <a href="/download/">下载</a>
+            <a href="https://docs.laminasys.org/" target="_blank" rel="noopener">文档</a>
+            <a href="/blog/">博客</a>
+            <a href="https://forum.laminasys.org/" target="_blank" rel="noopener">社区</a>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <div class="blog-post">
+    <article class="post-content-wrapper">
+        <div class="post-header">
+            <h1 class="post-title">Hello, Lamina!</h1>
+            <div class="post-meta">
+                <span class="post-date"><i class="fas fa-calendar-alt"></i> 2026-05-04</span>
+                
+                <span class="post-category">
+                    <i class="fas fa-folder"></i>
+                    
+                        <a href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a>
+                    
+                        <a href="/categories/%E4%BB%8B%E7%BB%8D/2026/">2026</a>
+                    
+                </span>
+                
+                
+                <span class="post-tags">
+                    <i class="fas fa-tags"></i>
+                    
+                        <a href="/tags/Lamina/">Lamina</a>
+                    
+                        <a href="/tags/%E4%BB%8B%E7%BB%8D/">介绍</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+        <div class="post-body">
+            <h2 id="为什么会有-Lamina"><a class="header-anchor" href="#为什么会有-Lamina">#</a>为什么会有 Lamina?</h2>
+<p>Lamina 项目最早始于2024年11月份，最初名称为MEDScript（MathEmatics DeScription）使用Python编写，目标为设计一款直至目前处于前概念阶段的硬件计算器提供系统主程序，后续从Python转向C++，在2025年5月份时确定了最早版本（也就是目前Lamina-dev/Lamina仓库的版本）的主要架构（现称之为Legacy Lamina）。</p>
+<h2 id="目前的境况"><a class="header-anchor" href="#目前的境况">#</a>目前的境况</h2>
+<p>Lamina 最早所宣传的是“精确数学计算编程语言”，随着开发的深入，我愈发感觉到“精确数学计算编程语言”这个定位是模糊的、不明确的，目前定义为“可编程的数学环境”。提供一个完整的，轻量的基本数学环境，不依赖任何庞大的第三方库或商业软件。目前主仓库的动作停滞近半年，导致外界认为此项目已经“死亡”，但事实并非如此。主仓库的静默是我们因为意识到，在没有坚实的底层支撑之前，任何上层语法的构建都是空中楼阁。目前，项目的重心已全面转向核心组件的开发。对那些期待Lamina投入实用而等待已久的支持者，我表示诚挚的歉意。但这并非放弃，由于我们低估了实现“精确”所需的底层工程量。<br>
+我们发现，如果在现有的、基于某个根据时间的协定所仓促开发的成果上继续堆砌功能会使得Lamina变成一个臃肿的、维护麻烦的项目，为了实现新的Lamina，目前我们将精力全部拆解到了以下四个并行的子项目中：</p>
+<ul>
+<li>LAMMP: 底层计算库</li>
+<li>LMMC: 重新编写的数值计算内核</li>
+<li>LMCAS: 符号计算引擎</li>
+<li>LMVM: 虚拟机</li>
+</ul>
+<h2 id="为什么选择自己开发？"><a class="header-anchor" href="#为什么选择自己开发？">#</a>为什么选择自己开发？</h2>
+<p>很多人问：为什么不用 MatLab, SageMath, 或者 Giac + MicroPython？<br>
+答案只有一个：为了拥有更高的上限。依赖 Python 层（NumPy/SymPy）意味着性能和语义被锁死在别人的框架内。我们要做的不是一个库，而是一个独立环境。</p>
+<h2 id="后续计划"><a class="header-anchor" href="#后续计划">#</a>后续计划</h2>
+<p>前文提到，在过去的几个月里，Lamina 的开发进入了一个相对沉默的阶段。<br>
+这并不是因为项目停滞，而是因为大量工作集中在底层和试验，这些内容难以被快速展示，也难以用零散的提交记录去表达。<br>
+但这带来了一个问题，外界无法判断项目的真实进展。<br>
+因此，我们决定从现在开始，引入固定节奏的开发记录。<br>
+从本篇开始，Lamina 将以半月为周期发布开发日志。每一期内容不会刻意包装成果，而是尽可能真实地记录：</p>
+<ul>
+<li>当前正在解决的问题</li>
+<li>这半个月的进展</li>
+<li>设计的改变</li>
+<li>下一阶段的目标<br>
+这既是对外的说明，也算作对开发节奏的一个约束。因为都是学生，业余时间不会太多，每一篇的长度不会太多，我相信对于一个仍在构建基础的项目而言，公开过程让人总是能看到进展是令人振奋的。<br>
+如果你对Lamina感兴趣，订阅RSS(<a href="https://laminasys.org/atom.xml">https://laminasys.org/atom.xml</a>)或者加入我们的<a target="_blank" rel="noopener" href="https://discord.gg/AzSFWuMFsY">Discord服务器</a>，让你能持续收到开发进度！</li>
+</ul>
+
+        </div>
+        <div class="post-footer-nav">
+            <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> 返回博客</a>
+        </div>
+    </article>
+</div>
+
+    </main>
+    <footer class="site-footer">
+    <div class="portal-shell site-footer-grid">
+        <div class="site-footer-column">
+            <h4>主要站点</h4>
+            <a href="/"><i class="fa-solid fa-house" aria-hidden="true"></i> Lamina</a>
+            <a href="/download/"><i class="fa-solid fa-download" aria-hidden="true"></i> 下载</a>
+            <a href="https://docs.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 文档</a>
+            <a href="https://git.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Git 加速</a>
+            <a href="/blog/"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> 博客</a>
+        </div>
+        <div class="site-footer-column">
+            <h4>社区</h4>
+            <a href="https://forum.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-comments" aria-hidden="true"></i> 论坛</a>
+            <a href="https://t.me/lamina_project" target="_blank" rel="noopener"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram @lamina_project</a>
+            <a href="https://web.libera.chat/#lamina" target="_blank" rel="noopener"><i class="fa-solid fa-hashtag" aria-hidden="true"></i> Libera.Chat #lamina</a>
+            <a href="https://discord.gg/AzSFWuMFsY" target="_blank" rel="noopener"><i class="fa-brands fa-discord" aria-hidden="true"></i> Discord</a>
+            <a href="https://qm.qq.com/cgi-bin/qm/qr?k=sSj7q14HP3UT2OlNqzmSVyp7EsPcthgZ&jump_from=webapi&authKey=uwVxTygvRRdev2UggBbMplJhWNWyebOw6SECSOGt4aldKqD9KMivdjqkOfT/L15I" target="_blank" rel="noopener"><i class="fa-brands fa-qq" aria-hidden="true"></i> QQ群 917929893</a>
+        </div>
+        <div class="site-footer-column">
+            <h4>开发</h4>
+            <a href="https://github.com/Lamina-dev/Lamina" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Lamina</a>
+            <a href="https://github.com/Lamina-dev/LMMC" target="_blank" rel="noopener"><i class="fa-solid fa-calculator" aria-hidden="true"></i> LMMC</a>
+            <a href="https://github.com/Lamina-dev/LMCAS" target="_blank" rel="noopener"><i class="fa-solid fa-superscript" aria-hidden="true"></i> LMCAS</a>
+            <a href="https://github.com/Lamina-dev/LAMMP" target="_blank" rel="noopener"><i class="fa-solid fa-microchip" aria-hidden="true"></i> LAMMP</a>
+            <a href="https://lsr.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-scroll" aria-hidden="true"></i> LSR</a>
+            <a href="mailto:administrators@laminasys.org"><i class="fa-solid fa-envelope" aria-hidden="true"></i> administrators@laminasys.org</a>
+        </div>
+        <div class="site-footer-about">
+            <div class="site-footer-brand">
+                <img src="/img/logo-icon.svg" alt="Lamina Logo">
+                <div>
+                    <strong>Lamina</strong>
+                    <p>可编程的数学环境</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portal-shell site-footer-bottom">
+        <span>Copyright © 2025–2026 Lamina-dev.</span>
+        <span>This domain is the official site for the Lamina System.</span>
+    </div>
+</footer>
+
+    
+</body>
+</html>

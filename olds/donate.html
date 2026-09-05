@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate to Lamina</title>
+<!-- 引入轻量 QRCode.js 库 -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<style>
+  body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 20px; max-width: 900px; }
+  header { border-bottom: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+  h1 { color: #e91e63; margin: 0; }
+  h2 { color: #d81b60; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  button.lang-switch { padding: 5px 10px; font-size: 0.9em; cursor: pointer; }
+  .donate-section { background: #fef4f8; border: 1px solid #f8bbd0; border-radius: 8px; padding: 20px; margin-bottom: 25px; }
+  .btn { display: inline-block; background-color: #e91e63; color: #fff; padding: 10px 18px; border-radius: 5px; font-weight: bold; margin: 10px 0; transition: background 0.3s; text-decoration: none; }
+  .btn:hover { background-color: #ff4081; }
+  details { margin-top: 10px; border: 1px solid #f8bbd0; border-radius: 6px; padding: 10px; background-color: #fff; }
+  details summary { cursor: pointer; font-weight: bold; color: #d81b60; }
+  .qr-container { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; justify-content: flex-start; }
+  .qr-item { text-align: center; flex: 1 1 200px; }
+  .qr-item canvas { border-radius: 8px; border: 1px solid #ccc; padding: 6px; background: #fff; }
+  footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #ccc; padding-top: 10px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 data-en="Support Lamina" data-zh="支持 Lamina">Support Lamina</h1>
+  <button class="lang-switch" id="langBtn">中文</button>
+</header>
+
+<section class="donate-section">
+  <h2 data-en="1. Donate via Open Collective" data-zh="1. 通过 Open Collective 捐赠">1. Donate via Open Collective</h2>
+  <p data-en="You can support Lamina through our official Open Collective page. This helps cover development costs and community operations."
+     data-zh="您可以通过我们的官方 Open Collective 页面支持 Lamina，这将帮助我们承担开发与社区运营的费用。">
+     You can support Lamina through our official Open Collective page. This helps cover development costs and community operations.
+  </p>
+  <a class="btn" href="https://opencollective.com/lamina-dev" target="_blank" data-en="Go to Open Collective →" data-zh="前往 Open Collective →">Go to Open Collective →</a>
+</section>
+
+<section class="donate-section">
+  <h2 data-en="2. Donate Directly" data-zh="2. 直接捐赠">2. Donate Directly</h2>
+  <p data-en="If you prefer, you can also donate directly using the payment methods below." 
+     data-zh="如果您愿意，也可以使用以下方式直接捐赠。">
+     If you prefer, you can also donate directly using the payment methods below.
+  </p>
+  
+  <details>
+    <summary data-en="Show QR codes and addresses" data-zh="展开付款二维码与地址">Show QR codes and addresses</summary>
+    <div class="qr-container">
+      <div class="qr-item">
+        <div id="wechatQR"></div>
+        <p data-en="WeChat Pay" data-zh="微信支付">WeChat Pay</p>
+      </div>
+      <div class="qr-item">
+        <div id="alipayQR"></div>
+        <p data-en="Alipay" data-zh="支付宝">Alipay</p>
+      </div>
+    </div>
+  </details>
+</section>
+
+<footer>
+  <p data-en="Thank you for supporting open-source development ❤️" data-zh="感谢您支持开源开发 ❤️">
+    Thank you for supporting open-source development ❤️ 
+  </p>
+  <p><a href="./index.html" data-en="← Back to Home" data-zh="← 返回主页">← Back to Home</a></p>
+</footer>
+
+<script>
+// ------------------ 项目切换 ------------------
+const langBtn = document.getElementById('langBtn');
+let currentLang = 'en';
+
+langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`);
+  });
+  langBtn.textContent = currentLang === 'en' ? '中文' : 'English';
+});
+
+// ------------------ 二维码生成 ------------------
+async function generateQR(containerId, text, size=180) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = ''; // 清空已有内容
+  try {
+    const canvas = document.createElement('canvas');
+    await QRCode.toCanvas(canvas, text, { width: size, margin: 2 });
+    container.appendChild(canvas);
+  } catch (err) {
+    container.textContent = 'QR generation failed';
+    console.error(err);
+  }
+}
+
+(async () => {
+  await generateQR('wechatQR', 'wxp://f2f08AVbcgyBXAydZj142nA3eAtAgExLVCUbAoy-LB4rt9NI8_foJGgrpkFxfcNB0K1d');
+  await generateQR('alipayQR', 'https://qr.alipay.com/fkx13856qgfxfx4lj2acfba');
+})();
+</script>
+
+</body>
+</html>
+
