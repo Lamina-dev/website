@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五月-下 - Lamina</title>
+    <meta name="description" content="Lamina 一个可编程的数学环境">
+    <meta name="keywords" content="Lamina,Lamina项目,Lamina项目解释器,Lamina项目解释器源码,Lamina项目解释器Github">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/portal.css?v=9">
+    <link rel="stylesheet" href="https://mirrors.sustech.edu.cn/cdnjs//ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Lamina" type="application/atom+xml">
+</head>
+<body>
+    <header class="site-header">
+    <div class="site-header-inner">
+        <a class="site-brand" href="/">Lamina</a>
+        <nav class="site-nav" aria-label="主导航">
+            <a href="/">主页</a>
+            <a href="https://github.com/Lamina-dev" target="_blank" rel="noopener">项目</a>
+            <a href="/download/">下载</a>
+            <a href="https://docs.laminasys.org/" target="_blank" rel="noopener">文档</a>
+            <a href="/blog/">博客</a>
+            <a href="https://forum.laminasys.org/" target="_blank" rel="noopener">社区</a>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <div class="blog-post">
+    <article class="post-content-wrapper">
+        <div class="post-header">
+            <h1 class="post-title">五月-下</h1>
+            <div class="post-meta">
+                <span class="post-date"><i class="fas fa-calendar-alt"></i> 2026-05-29</span>
+                
+                <span class="post-category">
+                    <i class="fas fa-folder"></i>
+                    
+                        <a href="/categories/%E5%8D%8A%E6%9C%88%E6%8A%A5/">半月报</a>
+                    
+                        <a href="/categories/%E5%8D%8A%E6%9C%88%E6%8A%A5/2026/">2026</a>
+                    
+                </span>
+                
+                
+                <span class="post-tags">
+                    <i class="fas fa-tags"></i>
+                    
+                        <a href="/tags/%E5%8D%8A%E6%9C%88%E6%8A%A5/">半月报</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+        <div class="post-body">
+            <h2 id="完成事项"><a class="header-anchor" href="#完成事项">#</a>完成事项</h2>
+<ul>
+<li>LMCAS
+<ul>
+<li>假设系统</li>
+<li>加入线性替换、三角组合及有理分解策略</li>
+<li>三次多项式、四次多项式、五次及以上多项式求解</li>
+<li>超越方程求解（Lambert W、Newton-Raphson）</li>
+<li>参数线性方程组求解、参数多项式方程组求解、不等式求解</li>
+<li>改用 lmmc_real_t、移除 HashData struct</li>
+<li>覆盖幂操作边缘情况和多项式运算修复</li>
+<li>舍入错误修复、NumberNode 正数判断修复</li>
+<li>重写注释，采用 Doxygen</li>
+</ul>
+</li>
+<li>LMMC
+<ul>
+<li>新增优化模块、FFT 实现</li>
+<li>添加特征值分解、插值、数值积分、随机数生成模块</li>
+<li>添加 Lambert W 函数实现及相关数学宏定义</li>
+<li>修复内存分配状态可能导致段错误的问题</li>
+<li>重写注释，采用 Doxygen</li>
+</ul>
+</li>
+<li>LAMMP
+<ul>
+<li>因子累乘函数原地构造新因子数组，减少内存占用</li>
+<li><code>binvert_3_</code> 函数改为 192 位宽，不再使用完整 128 位乘入 256 位</li>
+<li>修复错误的不平衡乘法调用</li>
+<li>对于汇编函数，使用 .def 文件导出符号</li>
+<li>统一类型；修改余数掩码表命名</li>
+<li>对自定义 abort 函数使用原子变量，保证线程逻辑一致</li>
+<li>重命名不同范围底数的幂计算函数</li>
+<li>加入 Doxygen 文档</li>
+<li>新增简单函数的内部内联头文件（inlines.h）</li>
+<li>内联 <code>lmmp_mul_n_</code> 和 <code>lmmp_sqr_</code></li>
+<li>使用结构体传参；添加 restrict 限定</li>
+<li>修改部分调优参数</li>
+<li>删除栈式分配器接口；新增临时缓冲池设计</li>
+<li>将 <code>lmmp_sqr_</code> 移至 mul.c 并删除 sqr.c</li>
+<li>新增无试除法的素性检验接口</li>
+</ul>
+</li>
+</ul>
+<h2 id="计划事项"><a class="header-anchor" href="#计划事项">#</a>计划事项</h2>
+<ul>
+<li>LMCAS
+<ul>
+<li>假设推理引擎扩展（除法/减法符号推断、复合域推断、单调性/周期性推断、循环检测与深度限制）</li>
+<li>假设查询接口扩展与缓存机制</li>
+<li>假设条件假设与 with_assumptions 函数模板</li>
+<li>假设序列化/反序列化</li>
+<li>假设自动传播规则与冲突诊断</li>
+<li>假设集成（积分器、极限、级数展开、ODE 求解器、匹配器/重写引擎）</li>
+</ul>
+</li>
+<li>LMMC
+<ul>
+<li>复数模块（类型、四则运算、超越函数、复向量/矩阵容器）</li>
+<li>逐元素向量/矩阵乘法、除法、幂运算（Hadamard）</li>
+<li>逐元素向量比较运算</li>
+<li>向量叉积</li>
+<li>矩阵整数幂（二进制快速幂）</li>
+<li>矩阵右除法</li>
+<li>矩阵 1-范数与无穷范数</li>
+<li>矩阵数值秩</li>
+<li>向量化超越函数（apply 模式及便捷包装）</li>
+<li>标量反三角函数（asin、acos、atan）</li>
+<li>标量双曲函数（sinh、cosh、tanh、asinh、acosh、atanh）</li>
+<li>标量幂与舍入函数（pow、ceil、floor、round、trunc）</li>
+</ul>
+</li>
+<li>LAMMP
+<ul>
+<li>使用整数计算代替浮点计算的缓冲区估算（主要涉及 pow 和部分数论函数）</li>
+<li>重构哈夫曼乘法树，精心构造乘法步骤，避免所有拷贝与临时内存，使结果恰好落在目标内存块</li>
+<li>完整实现 B^n 逆元（目前仅完成平衡情况）</li>
+<li>基于 B^n 逆元实现精确除法</li>
+<li>对二项式系数的不平衡情况使用精确除法</li>
+</ul>
+</li>
+<li>LMVM
+<ul>
+<li>略</li>
+</ul>
+</li>
+<li>Lamina
+<ul>
+<li>略</li>
+</ul>
+</li>
+</ul>
+<h2 id="订阅"><a class="header-anchor" href="#订阅">#</a>订阅</h2>
+<p><a href="https://laminasys.org/atom.xml">RSS</a><br>
+| <a target="_blank" rel="noopener" href="https://discord.gg/AzSFWuMFsY">Discord</a></p>
+
+        </div>
+        <div class="post-footer-nav">
+            <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> 返回博客</a>
+        </div>
+    </article>
+</div>
+
+    </main>
+    <footer class="site-footer">
+    <div class="portal-shell site-footer-grid">
+        <div class="site-footer-column">
+            <h4>主要站点</h4>
+            <a href="/"><i class="fa-solid fa-house" aria-hidden="true"></i> Lamina</a>
+            <a href="/download/"><i class="fa-solid fa-download" aria-hidden="true"></i> 下载</a>
+            <a href="https://docs.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open" aria-hidden="true"></i> 文档</a>
+            <a href="https://git.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Git 加速</a>
+            <a href="/blog/"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> 博客</a>
+        </div>
+        <div class="site-footer-column">
+            <h4>社区</h4>
+            <a href="https://forum.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-comments" aria-hidden="true"></i> 论坛</a>
+            <a href="https://t.me/lamina_project" target="_blank" rel="noopener"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram @lamina_project</a>
+            <a href="https://web.libera.chat/#lamina" target="_blank" rel="noopener"><i class="fa-solid fa-hashtag" aria-hidden="true"></i> Libera.Chat #lamina</a>
+            <a href="https://discord.gg/AzSFWuMFsY" target="_blank" rel="noopener"><i class="fa-brands fa-discord" aria-hidden="true"></i> Discord</a>
+            <a href="https://qm.qq.com/cgi-bin/qm/qr?k=sSj7q14HP3UT2OlNqzmSVyp7EsPcthgZ&jump_from=webapi&authKey=uwVxTygvRRdev2UggBbMplJhWNWyebOw6SECSOGt4aldKqD9KMivdjqkOfT/L15I" target="_blank" rel="noopener"><i class="fa-brands fa-qq" aria-hidden="true"></i> QQ群 917929893</a>
+        </div>
+        <div class="site-footer-column">
+            <h4>开发</h4>
+            <a href="https://github.com/Lamina-dev/Lamina" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Lamina</a>
+            <a href="https://github.com/Lamina-dev/LMMC" target="_blank" rel="noopener"><i class="fa-solid fa-calculator" aria-hidden="true"></i> LMMC</a>
+            <a href="https://github.com/Lamina-dev/LMCAS" target="_blank" rel="noopener"><i class="fa-solid fa-superscript" aria-hidden="true"></i> LMCAS</a>
+            <a href="https://github.com/Lamina-dev/LAMMP" target="_blank" rel="noopener"><i class="fa-solid fa-microchip" aria-hidden="true"></i> LAMMP</a>
+            <a href="https://lsr.laminasys.org/" target="_blank" rel="noopener"><i class="fa-solid fa-scroll" aria-hidden="true"></i> LSR</a>
+            <a href="mailto:administrators@laminasys.org"><i class="fa-solid fa-envelope" aria-hidden="true"></i> administrators@laminasys.org</a>
+        </div>
+        <div class="site-footer-about">
+            <div class="site-footer-brand">
+                <img src="/img/logo-icon.svg" alt="Lamina Logo">
+                <div>
+                    <strong>Lamina</strong>
+                    <p>可编程的数学环境</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portal-shell site-footer-bottom">
+        <span>Copyright © 2025–2026 Lamina-dev.</span>
+        <span>This domain is the official site for the Lamina System.</span>
+    </div>
+</footer>
+
+    
+</body>
+</html>

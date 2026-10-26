@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lamina - Download</title>
+<style>
+  body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 20px; max-width: 900px; transition: all 0.3s; }
+  header { border-bottom: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+  h1 { color: #2c3e50; margin: 0; }
+  h2 { color: #34495e; }
+  a { text-decoration: none; }
+  footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #ccc; padding-top: 10px; }
+  button.lang-switch { padding: 5px 10px; font-size: 0.9em; cursor: pointer; margin-left: 10px; }
+  .download-btn {
+    display: inline-block;
+    background-color: #27ae60;
+    color: #fff !important;
+    padding: 10px 20px;
+    margin: 10px 5px 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .download-btn:hover { background-color: #2ecc71; }
+  .buttons { margin-top: 20px; }
+  @media (max-width: 600px) {
+    header { flex-direction: column; align-items: flex-start; }
+    .buttons { display: flex; flex-direction: column; }
+    .download-btn { margin-bottom: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1 data-en="Lamina" data-zh="Lamina">Lamina</h1>
+    <p data-en="Download Lamina Versions" data-zh="下载 Lamina 版本">Download Lamina Versions</p>
+  </div>
+  <div>
+    <button class="lang-switch" id="langBtn">中文</button>
+  </div>
+</header>
+
+<main>
+  <section id="download-options">
+    <h2 data-en="Choose your download" data-zh="选择你的下载">Choose your download</h2>
+    <div class="buttons">
+      <a href="prepacked.html" class="download-btn" data-en="Lamina Prepacked Version" data-zh="Lamina 预包装版本">Lamina Prepacked Version</a>
+      <a href="https://github.com/Lamina-dev/Lamina/releases/" target="_blank" class="download-btn" data-en="Go to GitHub Releases" data-zh="到 GitHub Releases">Go to GitHub Releases</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p data-en="2025 Lamina-dev &mdash; GitHub Repository" data-zh="2025 Lamina-dev &mdash; GitHub 仓库">
+    2025 Lamina-dev &mdash; <a href="https://github.com/Lamina-dev/Lamina" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+<script>
+const langBtn = document.getElementById('langBtn');
+let currentLang = 'en'; // 默认英语
+
+langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  langBtn.textContent = currentLang === 'en' ? '中文' : 'English';
+});
+</script>
+
+</body>
+</html>
+
